@@ -1,0 +1,30 @@
+<h3>Cart info</h3>
+<table border="1">
+    <tr>
+
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Photo</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td>{{item.product.id}}</td>
+        <td>{{item.product.name}}</td>
+        <td>{{item.product.price}}</td>
+        <td>
+            <img src="assets/image/{{item.product.photo}}" alt="">
+        </td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price*item.quantity}}</td>
+        <td align="center">
+            <a (click)="remove(item.product.id)">X</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right">Total</td>
+        <td>{{total}}</td>
+    </tr>
+</table>
